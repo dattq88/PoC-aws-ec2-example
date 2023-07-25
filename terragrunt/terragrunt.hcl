@@ -1,6 +1,6 @@
 terraform {
-  source = "git::https://git.aws.platform.vpbank.dev/platform/misc/demo-security/terraform-demo-sec.git"
-  #source = "../"
+  #source = "git::https://git.aws.platform.vpbank.dev/platform/misc/demo-security/terraform-demo-sec.git"
+  source = "../"
 }
 
 # ---------------------------------------------------------------------------------------------------------------------
