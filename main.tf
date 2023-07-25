@@ -7,7 +7,7 @@ resource "aws_instance" "ec2_instance" {
   associate_public_ip_address          = var.associate_public_ip_address
   private_ip                           = length(var.private_ip) == var.instance_count ? var.private_ip[count.index] : null
   availability_zone                    = var.availability_zone
-  subnet_id                            = length(var.subnet_ids) > 0 ? tolist(var.subnet_ids)[count.index] : tolist(data.aws_subnets.selected.ids)[count.index]
+  subnet_id                            = length(var.subnet_ids) > 0 ? tolist(var.subnet_ids)[count.index] : ""
   user_data                            = var.user_data != null ? var.user_data : local.user_data
   vpc_security_group_ids               = compact(concat(var.vpc_security_group_ids, [for k, v in aws_security_group.security_group : v.id]))
   disable_api_termination              = var.disable_api_termination
