@@ -223,12 +223,6 @@ variable "ebs_block_device_mappings" {
   default     = []
 }
 
-variable "subnet_by_tag" {
-  description = "Tag Name of subnet to get list of subnets."
-  type        = string
-  default     = null
-}
-
 variable "vpc_id" {
   type        = string
   description = "The VPC ID where Security Group will be created."
