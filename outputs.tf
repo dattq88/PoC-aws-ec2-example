@@ -1,4 +1,3 @@
-
 output "instance_id" {
   description = "List IDs of instances"
   value       = { for k, v in aws_instance.ec2_instance : k => v.id }
