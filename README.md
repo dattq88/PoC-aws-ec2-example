@@ -2,6 +2,12 @@
 
 Terraform module which creates EC2 resources on AWS provided by Terraform AWS provider.
 
+## How to run terragrunt and analyze in pipeline
+1. CD to terragrunt folder
+2. Run terragrunt and output the plan file : `terragrunt plan -out tf.plan`
+3. Convert the plan file into Json file: `terragrunt show -json tf.plan > tfplan.json`
+4. Scan the json file
+
 ## Usage
 ```hcl
 module "ec2" {
