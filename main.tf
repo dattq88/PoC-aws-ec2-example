@@ -32,7 +32,7 @@ resource "aws_instance" "ec2_instance" {
     for_each = var.root_block_device_mappings
     content {
       delete_on_termination = lookup(root_block_device.value, "delete_on_termination", null)
-      encrypted             = lookup(root_block_device.value, "encrypted", null)
+      encrypted             = lookup(root_block_device.value, "encrypted", true)
       iops                  = lookup(root_block_device.value, "iops", null)
       kms_key_id            = lookup(root_block_device.value, "kms_key_id", null)
       volume_size           = lookup(root_block_device.value, "volume_size", null)
